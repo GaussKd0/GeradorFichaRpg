@@ -32,13 +32,13 @@ public class main {
 				System.out.println("Qual Raça Deseja {1} para Humano {2} para Elfo {3} para Gigante {4} para Anão");
 				rpg.setRacas(scan.nextInt());
 				
-		        rpg.setAtk();
-		        rpg.setHp();
-		        rpg.setMagia();
-		        rpg.setVelocidade();
-		        rpg.setDado(20);
+		                rpg.setAtk();
+		                rpg.setHp();
+		                rpg.setMagia();
+		                rpg.setVelocidade();
+		                rpg.setDado(20);
 				
-		        System.out.println("Dados Girados: " + rpg.getDados());
+		                System.out.println("Dados Girados: " + rpg.getDados());
 				GerarArquivo.EscreverFicha("Ficha.txt", rpg.getNome());
 				GerarArquivo.EscreverFicha("Ficha.txt", rpg.getGenero());
 				GerarArquivo.EscreverFicha("Ficha.txt", rpg.getRacas());
