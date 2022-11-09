@@ -49,7 +49,6 @@ public class main {
 				GerarArquivo.EscreverFicha("Ficha.txt", rpg.getVelocidade());
 				
 				System.out.println("Ficha Gerada Com Sucesso!");
-				System.out.println("Deseja Ver A Sua Ficha?");
 				
 				System.out.println("Sua Ficha!");
 				
