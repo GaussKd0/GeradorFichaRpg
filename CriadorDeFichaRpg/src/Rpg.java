@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class Rpg {
 	
-	private String Racas;
+	private String SubClasse;
 	private String Nome;
 	private String Genero;
 	private String TipoMagia;
@@ -12,26 +12,38 @@ public class Rpg {
 	private String Hp;
 	private String Magia;
 	private String Velocidade;
+	private String Carisma;
+	private String Sorte;
+	private String subClass;
+	private String Racas;
+	private String HabildadeEspecial;
+	
+	private int Atksoma;
+	private int VidaSoma;
+	private int MagiaSoma;
+	private int VelocidadeSoma;
+	
+	private String n = "\n===================================";
 	
 	
 	public String getRacas() {	
 		
-		return "Sua Raca: " + this.Racas + "\n===================================" + "\n===================================";
+		return "Sua Raca: " + this.Racas + n + n;
 	 }
 	
 	public String getNome() {
 		
-		return "Seu Nome: " + this.Nome + "\n===================================" + "\n===================================";
+		return "Seu Nome: " + this.Nome + n + n;
 	}
 	
     public String getGenero() {
 		
-		return "Seu Genero: " + this.Genero + "\n===================================" + "\n===================================";
+		return "Seu Genero: " + this.Genero + n + n;
 	}
     
     public String getTipoMagia() {
 		
-		return "Sua Magia: " + this.TipoMagia + "\n===================================" + "\n===================================";
+		return "Sua Magia: " + this.TipoMagia + n + n;
 	}
     
     public int getDados() {
@@ -41,24 +53,38 @@ public class Rpg {
     
     public String getAtk() 
     {
-    	return "Sua Força: " + this.Atk + "\n===================================" + "\n===================================" ;
+    	return "Sua Força: " + this.Atk +  " + " + Atksoma + n + n;
     }
     
     public String getHp() 
     {
-    	return "Seu Hp: " + this.Hp + "\n===================================" + "\n===================================";
+    	return "Seu Hp: " + this.Hp  +  " + " + VidaSoma + n + n;
     }
     
     public String getMagia() 
     {
-    	return "Quantidade Mana: " + this.Magia + "\n===================================" + "\n===================================";
+    	return "Quantidade Mana: " + this.Magia + " + " + MagiaSoma + n + n;
     }
     
     public String getVelocidade() 
     {
-    	return "Sua Velocidade: " + this.Velocidade + "\n===================================" + "\n===================================";
+    	return "Sua Velocidade: " + this.Velocidade + " + " + Velocidade + n + n;
     }
     
+    public String getCarisma() 
+    {
+    	return "Seu Carisma: " + this.Carisma + n + n;
+    }
+    
+    public String getSubClasse() {
+    	
+    	return "Sua SubClasse: " + this.subClass + n + n;
+    }
+    
+    public String getSorte() {
+    	
+    	return "Sua Sorte " + this.Sorte + n + n;
+    }
 
     public void setNome(String Nome) {
     	
@@ -79,9 +105,10 @@ public class Rpg {
            }
         if(Genero == 1) {
         	this.Genero = "Homen";
+        	
         }
         
-        else {
+        else if (Genero == 2){
         	this.Genero = "Mulher";
         }
     	
@@ -147,6 +174,7 @@ public class Rpg {
           }  
           
         }
+		
     }
     
     public void setAtk() 
@@ -242,4 +270,62 @@ public class Rpg {
 
   }
   
+  public void setCarisma(int Carisma) {
+	  
+	  Random random = new Random();
+	  Carisma = random.nextInt(Carisma);
+	  this.Carisma = Integer.toString(Carisma);
+  }
+  
+  public void setSorte(int Sorte) {
+	  Random random = new Random();
+	  Sorte = random.nextInt(Sorte);
+	  this.Sorte = Integer.toString(Sorte);
+	  
+  }
+  
+  public void setSubClass(int SubClasse) {
+		Scanner scan = new Scanner(System.in);
+		while(SubClasse > 4 || SubClasse == 0) {
+			System.out.println("Qual SubClasse Deseja {1} para Feiticeiro {2} para Guerreiro {3} para Assassino {4} para Necromancer");
+			SubClasse = scan.nextInt();
+		}
+		
+		switch(SubClasse) {
+          case 1 ->{
+       	     this.subClass = "Feiticeiro";
+       	     this.Atksoma = 0;
+       	     this.MagiaSoma = 4;
+       	     this.VidaSoma = 1;
+       	     this.VelocidadeSoma = 0;
+       	     
+          }
+          
+          case 2 ->{
+         	 this.subClass = "Guerreiro";
+         	 this.Atksoma = 4;
+         	 this.MagiaSoma = 0;
+         	 this.VidaSoma = 4;
+         	 this.VelocidadeSoma = 2;
+          }
+          
+          case 3 ->{
+         	 this.subClass= "Assassino";
+         	 this.Atksoma = 2;
+         	 this.MagiaSoma = 1;
+         	 this.VidaSoma = 1;
+         	 this.VelocidadeSoma = 5;
+          }
+          
+          case 4 ->{
+            this.subClass = "Necromancer";
+            this.Atksoma = 0;
+            this.MagiaSoma = 3;
+            this.VidaSoma = 2;
+            this.VelocidadeSoma = 0;
+            
+          }  
+          
+        }
+  }
 }
