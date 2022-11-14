@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {  
 		Rpg rpg = new Rpg();
 		Scanner scan = new Scanner(System.in);
 		
@@ -32,13 +32,19 @@ public class main {
 				System.out.println("Qual Raça Deseja {1} para Humano {2} para Elfo {3} para Gigante {4} para Anão");
 				rpg.setRacas(scan.nextInt());
 				
+				System.out.println("Qual SubClasse Deseja {1} para Feiticeiro {2} para Guerreiro {3} para Assassino {4} para Necromancer");
+				rpg.setSubClass(scan.nextInt());
+				
 		                rpg.setAtk();
 		                rpg.setHp();
 		                rpg.setMagia();
 		                rpg.setVelocidade();
 		                rpg.setDado(20);
+		                rpg.setCarisma(10);
+		                rpg.setSorte(10);
 				
 		                System.out.println("Dados Girados: " + rpg.getDados());
+		        
 				GerarArquivo.EscreverFicha("Ficha.txt", rpg.getNome());
 				GerarArquivo.EscreverFicha("Ficha.txt", rpg.getGenero());
 				GerarArquivo.EscreverFicha("Ficha.txt", rpg.getRacas());
@@ -47,9 +53,12 @@ public class main {
 				GerarArquivo.EscreverFicha("Ficha.txt", rpg.getAtk());
 				GerarArquivo.EscreverFicha("Ficha.txt", rpg.getMagia());
 				GerarArquivo.EscreverFicha("Ficha.txt", rpg.getVelocidade());
+				GerarArquivo.EscreverFicha("Ficha.txt", rpg.getCarisma());
+				GerarArquivo.EscreverFicha("Ficha.txt", rpg.getSubClasse());
+				GerarArquivo.EscreverFicha("Ficha.txt", rpg.getSorte());
 				
 				System.out.println("Ficha Gerada Com Sucesso!");
-				
+								
 				System.out.println("Sua Ficha!");
 				
 				GerarArquivo.LerFicha("Ficha.txt");
